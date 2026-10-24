@@ -82,19 +82,17 @@ Un simulador de torneos por rondas contra la computadora con análisis estadíst
 
 ---
 
-### 2. Cazafantasmas 2.0: Escudo Ectoplásmico
+### 2. Cazafantasmas Matemático
 
 > 💼 **Caso de Negocio / Simulación Profesional:**  
-> Este proyecto fue concebido y desarrollado bajo la simulación de un encargo corporativo real: una entidad educativa contrata a un equipo de desarrollo de software para construir un videojuego interactivo de entrenamiento matemático para estudiantes de educación primaria.
+> Este proyecto fue concebido y desarrollado bajo la simulación de un encargo corporativo: una entidad educativa contrata a un equipo de desarrollo de software para construir un videojuego interactivo, ágil y gamificado de entrenamiento matemático para estudiantes de primaria que inician en aritmética.
 
-- **Requerimientos Pedagógicos y de Negocio Resueltos:**
-  - **Matemáticas adaptadas a primaria:** Generación dinámica de desafíos aritméticos (suma, resta, multiplicación y división). El algoritmo garantiza que las restas nunca generen números negativos (`n2 <= n1`) y que las divisiones sean siempre exactas sin decimales (`n1 = n2 * solucion`), asegurando una experiencia didáctica estimulante y pedagógicamente correcta.
-  - **Economía de juego (Diccionarios):** Catálogo de artefactos estructurado mediante diccionarios (`dict`), asociando cada herramienta (`red`, `aspiradora`, `laser`) a un puntaje específico de recompensa. Se captura de forma controlada el error `KeyError` si el usuario intenta equipar un artículo inexistente.
-  - **Protocolo de Tolerancia a Fallos Completo (`try - except - else - finally`):**
-    - `try`: Captura la respuesta numérica del usuario protegiendo la ejecución de posibles caídas.
-    - `except ValueError`: **Escudo protector:** Si el niño introduce accidentalmente letras, espacios o caracteres especiales, el sistema no colapsa; activa un escudo ectoplásmico seguro notificando el evento.
-    - `else`: Ejecución de lógica de recompensa y validación de respuesta únicamente cuando la conversión a entero fue exitosa.
-    - `finally`: Rutina obligatoria del sistema; disminuye la batería y enfría el equipo tras cada ronda de forma incondicional, simulando la telemetría del artefacto.
+- **Requerimientos Pedagógicos y de Gamificación Resueltos:**
+  - **Interacción directa sin fricción (Zero Typing Overhead):** Diseñado específicamente para niños que aún no dominan la mecanografía. El juego va directo a la acción: el niño solo utiliza el teclado numérico para disparar la solución matemática, eliminando ingresos innecesarios de palabras.
+  - **Aritmética adaptada a primaria:** Generador dinámico de operaciones básicas (suma, resta, multiplicación y división). El algoritmo asegura que las restas nunca arrojen resultados negativos (`n2 <= n1`) y que las divisiones sean siempre exactas sin decimales (`n1 = n2 * solucion`), fomentando el aprendizaje sin frustración.
+  - **Gamificación visual:** Sistema de vidas con corazones (`❤️ ❤️ ❤️`), puntaje acumulativo por fantasmas cazados (`+10 puntos`) y avance progresivo de misiones por rondas.
+  - **Tolerancia a fallos con escudo protector (`try - except ValueError - else`):** Si el niño presiona accidentalmente letras o símbolos, el sistema atrapa el `ValueError` y despliega un mensaje protector sin quitarle vidas ni perder el turno.
+  - **Experiencia de usuario limpia (Clean UX):** Limpieza dinámica de terminal (`os.system`) para mantener el tablero fijo sin desplazamiento de pantalla y ciclo de revancha interactivo.
 
 ---
 
