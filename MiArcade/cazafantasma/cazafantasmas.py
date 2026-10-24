@@ -3,7 +3,6 @@ import random
 def jugar():
     print("⚡ ============================================ ⚡")
     print("   ¡CAZAFANTASMAS 2.0: ESCUDO ECTOPLÁSMICO!      ")
-    print("   (Juego protegido con try - except - else - finally) ")
     print("⚡ ============================================ ⚡\n")
 
     trampas = {
