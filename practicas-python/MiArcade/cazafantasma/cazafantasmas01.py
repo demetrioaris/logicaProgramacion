@@ -1,6 +1,6 @@
 import random
 
-
+def jugar():
     print("\n👻 ¡Bienvenido a Cazafantasmas Matemático!")
     # ... (Aquí va todo el código del Nivel 1 o Nivel 2) ...
     print("👻 ============================================ 👻")
