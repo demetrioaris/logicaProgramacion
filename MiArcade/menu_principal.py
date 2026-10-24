@@ -1,9 +1,6 @@
-# MODO CORRECTO DE USAR RUTAS RELATIVAS EN PYTHON:
-# from [nombre_carpeta] import [nombre_archivo]
-
-
-from piedra_papel_tijeras import piedra_papel_tijera_try_exception
-from cazafantasma import cazafantasmas01
+from piedra_papel_y_tijera import piedra_papel_y_tijera
+from cazafantasma import cazafantasmas
+from ahorcado import ahorcado
 
 def mostrar_menu():
     while True:
@@ -12,21 +9,25 @@ def mostrar_menu():
         print("=======================================")
         print("[1] Jugar: Piedra, Papel o Tijera")
         print("[2] Jugar: Cazafantasmas Matemático")
-        print("[3] Salir")
+        print("[3] Jugar: Ahorcado")
+        print("[4] Salir")
         print("=======================================")
         
-        opcion = input("Elige a qué quieres jugar (1-3): ")
+        opcion = input("Elige a qué quieres jugar (1-4): ")
 
         if opcion == "1":
             print("\nAbriendo la carpeta del juego 1...")
-            # Como ya lo importamos arriba, lo llamamos directo
-            piedra_papel_tijera_try_exception.jugar() 
+            piedra_papel_y_tijera.jugar() 
             
         elif opcion == "2":
             print("\nAbriendo la carpeta del juego 2...")
-            cazafantasmas01.jugar()
-            
+            cazafantasmas.jugar()
+
         elif opcion == "3":
+            print("\nAbriendo la carpeta del juego 3...")
+            ahorcado.jugar()
+            
+        elif opcion == "4":
             print("\n¡Gracias por jugar! Apagando consola... 📺")
             break
             
@@ -34,4 +35,6 @@ def mostrar_menu():
             print("\n❌ Opción no válida.\n")
 
 if __name__ == "__main__":
+    mostrar_menu()
+
     mostrar_menu()
