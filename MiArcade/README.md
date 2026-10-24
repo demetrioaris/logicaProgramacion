@@ -50,7 +50,10 @@ El proyecto sigue una arquitectura modular en paquetes independientes orquestado
 MiArcade/
 │
 ├── menu_principal.py               # Orquestador principal y hub del Arcade
-├── utils.py                        # Módulo transversal (DRY): limpieza de terminal y confirmación interactiva
+│
+├── config/                         # Paquete transversal: configuraciones y utilidades (DRY)
+│   ├── __init__.py
+│   └── utils.py                    # Limpieza de terminal y confirmación interactiva
 │
 ├── piedra_papel_y_tijera/          # Módulo: Juego 1
 │   ├── __init__.py
