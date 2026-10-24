@@ -50,6 +50,7 @@ El proyecto sigue una arquitectura modular en paquetes independientes orquestado
 MiArcade/
 │
 ├── menu_principal.py               # Orquestador principal y hub del Arcade
+├── utils.py                        # Módulo transversal (DRY): limpieza de terminal y confirmación interactiva
 │
 ├── piedra_papel_y_tijera/          # Módulo: Juego 1
 │   ├── __init__.py
@@ -74,11 +75,12 @@ MiArcade/
 
 Un simulador de torneos por rondas contra la computadora con análisis estadístico en tiempo real.
 
-- **Enfoque Algorítmico:**
-  - **Validación de entrada defensiva:** Uso de bucles `while` con `try-except` para garantizar que la cantidad de rondas ingresada sea un entero positivo mayor que cero, y que la jugada pertenezca estrictamente al universo de opciones válidas.
-  - **Aleatoriedad estocástica:** Selección no predecible de la máquina mediante `random.choice()`.
-  - **Evaluación lógica:** Matriz de condiciones booleanas compuestas para resolver victorias, derrotas y empates.
-  - **Seguimiento de historial:** Almacenamiento continuo en listas y análisis de resultados finales empleando `list.count()` y numeración con `enumerate()`.
+- **Enfoque Algorítmico y de UX:**
+  - **Experiencia de usuario ágil y mapeo asociativo:** Menú de opciones intuitivo que acepta tanto números (`1`, `2`, `3`) como palabras (`piedra`, `papel`, `tijera`) mediante diccionarios de mapeo (`dict`).
+  - **Marcador en vivo y terminal limpia (Clean UX):** Refresco dinámico con `os.system` que mantiene el encabezado, la ronda actual y el marcador en vivo (`👤 Tú vs 🤖 CPU`) fijos en pantalla sin desplazamiento molesto.
+  - **Validación defensiva con excepciones (`try - except ValueError`):** Control estricto de entradas que intercepta valores no permitidos mediante `raise ValueError`, garantizando tolerancia a fallos.
+  - **Aleatoriedad estocástica y lógica de juego:** Selección de la máquina con `random.choice()` y resolución booleana precisa de victorias, derrotas y empates.
+  - **Historial de torneo y rejugabilidad:** Registro completo de rondas en tuplas, proclamación de campeón al cierre y ciclo interactivo para reiniciar torneos o volver al menú principal.
 
 ---
 
