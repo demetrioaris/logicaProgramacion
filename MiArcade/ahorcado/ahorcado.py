@@ -304,8 +304,8 @@ def jugar():
             pantalla.blit(surf_l, surf_l.get_rect(center=r_draw.center))
 
         for rect_b, texto_b, col_b, col_t in (
-            (btn_nueva, "🔄 Nueva Palabra", (255, 183, 3), (20, 20, 30)),
-            (btn_salir, "🚪 Menú (ESC)", (239, 71, 111), (255, 255, 255))
+            (btn_nueva, "Nueva Palabra", (255, 183, 3), (20, 20, 30)),
+            (btn_salir, "Menú (ESC)", (239, 71, 111), (255, 255, 255))
         ):
             hover = rect_b.collidepoint(pos_mouse)
             r_draw = rect_b.inflate(4, 2) if hover else rect_b

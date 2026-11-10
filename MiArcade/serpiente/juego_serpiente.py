@@ -366,9 +366,9 @@ def jugar():
             surf_t = fuente_titulo.render("S N A K E   G A M E", True, temas_color[indice_color]["cabeza"])
             pantalla.blit(surf_t, surf_t.get_rect(center=(ANCHO // 2, 175)))
 
-            dibujar_boton(btn_menu_jugar, "▶ Comenzar a Jugar (ESPACIO)", (6, 180, 125), pos_mouse)
-            dibujar_boton(btn_menu_opciones, "⚙️ Opciones y Color (O)", (58, 134, 255), pos_mouse)
-            dibujar_boton(btn_menu_salir, "🚪 Volver al Arcade (ESC)", (239, 71, 111), pos_mouse)
+            dibujar_boton(btn_menu_jugar, "Comenzar a Jugar (ESPACIO)", (6, 180, 125), pos_mouse)
+            dibujar_boton(btn_menu_opciones, "Opciones y Color (O)", (58, 134, 255), pos_mouse)
+            dibujar_boton(btn_menu_salir, "Volver al Arcade (ESC)", (239, 71, 111), pos_mouse)
 
             surf_ctrl = fuente_peq.render("Controles: Flechas o W/A/S/D para moverte  |  P para Pausa", True, (170, 185, 210))
             pantalla.blit(surf_ctrl, surf_ctrl.get_rect(center=(ANCHO // 2, 575)))

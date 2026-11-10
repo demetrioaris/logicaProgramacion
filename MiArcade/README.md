@@ -49,29 +49,24 @@ El proyecto sigue una arquitectura modular en paquetes independientes orquestado
 ```text
 MiArcade/
 │
-├── menu_principal.py               # Orquestador principal y hub del Arcade
-│
-├── config/                         # Paquete transversal: configuraciones y utilidades (DRY)
-│   ├── __init__.py
-│   └── utils.py                    # Limpieza de terminal y confirmación interactiva
+├── menu_principal.py               # Orquestador principal y hub del Arcade (Pygame 60 FPS)
 │
 ├── piedra_papel_y_tijera/          # Módulo: Juego 1
 │   ├── __init__.py
-│   └── piedra_papel_y_tijera.py    # Lógica de rondas, torneos y estadísticas
+│   └── piedra_papel_y_tijera.py    # Duelo clásico en Pygame con partículas y sonido
 │
 ├── cazafantasma/                   # Módulo: Juego 2 (Simulación de Caso de Negocio)
 │   ├── __init__.py
-│   └── cazafantasmas.py            # Motor matemático adaptativo con suite try/except/else/finally
+│   └── cazafantasmas.py            # Entrenador matemático interactivo en Pygame
 │
 ├── ahorcado/                       # Módulo: Juego 3
 │   ├── __init__.py
-│   ├── ahorcado.py                 # Lógica de juego, sets de letras y renderizado dinámico
-│   ├── hangman_visual.py           # Diccionario de arte visual ASCII por niveles de vidas
+│   ├── ahorcado.py                 # Juego del ahorcado en Pygame con teclado virtual
 │   └── palabras.py                 # Banco léxico desacoplado
 │
 └── serpiente/                      # Módulo: Juego 4 (Gráficos y Bucles de Eventos en Tiempo Real)
     ├── __init__.py
-    └── juego_serpiente.py          # Motor Snake en Turtle con cola de giros y personalización
+    └── juego_serpiente.py          # Motor Snake en Pygame a 60 FPS con cola de giros
 ```
 
 ---

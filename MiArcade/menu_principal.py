@@ -109,8 +109,8 @@ def seleccionar_juego_pygame():
     tarjetas = [
         {
             "id": 1,
-            "titulo": "[1] Piedra, Papel o Tijera",
-            "desc": "Duelo clásico con animaciones y partículas",
+            "titulo": "[1] Piedra, Papel o\nTijera",
+            "desc": "Duelo clásico con animaciones",
             "tag": "PYGAME 60 FPS",
             "color": (58, 134, 255),
             "rect": pygame.Rect(65, 140, 325, 175)
@@ -118,7 +118,7 @@ def seleccionar_juego_pygame():
         {
             "id": 2,
             "titulo": "[2] Cazafantasmas",
-            "desc": "Atrapa fantasmas resolviendo matemáticas",
+            "desc": "Atrapa fantasmas con matemáticas",
             "tag": "PYGAME 60 FPS",
             "color": (6, 214, 160),
             "rect": pygame.Rect(430, 140, 325, 175)
@@ -126,15 +126,15 @@ def seleccionar_juego_pygame():
         {
             "id": 3,
             "titulo": "[3] El Ahorcado",
-            "desc": "Descubre la palabra con teclado virtual",
+            "desc": "Descubre la palabra con teclado",
             "tag": "PYGAME 60 FPS",
             "color": (255, 183, 3),
             "rect": pygame.Rect(65, 345, 325, 175)
         },
         {
             "id": 4,
-            "titulo": "[4] La Serpiente (Snake)",
-            "desc": "Come manzanas y supera tu récord sin chocar",
+            "titulo": "[4] La Serpiente \n(Snake)",
+            "desc": "Come manzanas y supera tu récord",
             "tag": "PYGAME 60 FPS",
             "color": (168, 85, 247),
             "rect": pygame.Rect(430, 345, 325, 175)
@@ -223,13 +223,17 @@ def seleccionar_juego_pygame():
             surf_tag = fuente_tag.render(t["tag"], True, (15, 18, 28))
             pantalla.blit(surf_tag, surf_tag.get_rect(center=rect_tag.center))
 
-            surf_t = fuente_card_titulo.render(t["titulo"], True, (255, 255, 255))
-            pantalla.blit(surf_t, (r_draw.x + 108, r_draw.y + 58))
+            lineas_titulo = t["titulo"].split("\n")
+            y_texto = r_draw.y + 52
+            for linea in lineas_titulo:
+                surf_t = fuente_card_titulo.render(linea, True, (255, 255, 255))
+                pantalla.blit(surf_t, (r_draw.x + 108, y_texto))
+                y_texto += 24
 
             surf_d = fuente_card_desc.render(t["desc"], True, (175, 185, 210))
-            pantalla.blit(surf_d, (r_draw.x + 108, r_draw.y + 92))
+            pantalla.blit(surf_d, (r_draw.x + 108, y_texto + 8))
 
-            txt_jugar = "▶ JUGAR AHORA" if es_hover else "Clic para abrir"
+            txt_jugar = "JUGAR AHORA" if es_hover else "Clic para abrir"
             col_jugar = t["color"] if es_hover else (110, 120, 145)
             surf_j = fuente_tag.render(txt_jugar, True, col_jugar)
             pantalla.blit(surf_j, (r_draw.x + 108, r_draw.y + 132))
@@ -246,7 +250,7 @@ def seleccionar_juego_pygame():
         col_salir = (255, 95, 130) if hover_salir else (239, 71, 111)
         pygame.draw.rect(pantalla, col_salir, r_salir, border_radius=12)
         pygame.draw.rect(pantalla, (255, 255, 255), r_salir, 2, border_radius=12)
-        surf_salir = fuente_sub.render("🚪 Apagar Consola (ESC)", True, (255, 255, 255))
+        surf_salir = fuente_sub.render("Apagar Consola (ESC)", True, (255, 255, 255))
         pantalla.blit(surf_salir, surf_salir.get_rect(center=r_salir.center))
 
         pygame.display.flip()
@@ -268,7 +272,7 @@ def mostrar_menu():
         elif opcion == 4:
             juego_serpiente.jugar()
         else:
-            print("\n¡Gracias por jugar! Apagando consola... 📺")
+            print("\n¡Gracias por jugar! Apagando consola...")
             break
 
 if __name__ == "__main__":
