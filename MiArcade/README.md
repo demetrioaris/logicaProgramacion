@@ -1,11 +1,12 @@
 # 🕹️ MiArcade - Virtual Game Hub
 
 [![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Pygame](https://img.shields.io/badge/Pygame-2D_60_FPS-00B050?style=for-the-badge&logo=python&logoColor=white)](https://www.pygame.org/)
 [![Cisco Networking Academy](https://img.shields.io/badge/Cisco_Networking_Academy-Course_Project-049fd9?style=for-the-badge&logo=cisco&logoColor=white)](https://www.netacad.com/)
 [![FUNDESTEAM](https://img.shields.io/badge/FUNDESTEAM-Panamá-FF6F00?style=for-the-badge)](https://fundesteam.org/)
 [![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)]()
 
-> **MiArcade** es un centro de videojuegos clásicos e interactivos desarrollados en consola con Python. El proyecto está diseñado con un enfoque de ingeniería de software profesional, orientado a demostrar dominio en **lógica algorítmica, programación estructurada, modularización, manejo robusto de excepciones y experiencia de usuario (UX) en terminal**.
+> **MiArcade** es un centro de videojuegos 2D clásicos e interactivos desarrollados en **Python** utilizando la librería gráfica **Pygame** a 60 FPS. El proyecto está diseñado con un enfoque de ingeniería de software profesional, orientado a demostrar dominio en **lógica algorítmica, programación estructurada, modularización, manejo robusto de excepciones, gráficos vectoriales procedurales, audio sintetizado y experiencia de usuario (UI/UX) interactiva con mouse y teclado**.
 
 ---
 
@@ -17,28 +18,33 @@ Este proyecto fue desarrollado y estructurado en el marco del programa formativo
 
 ## 🎯 Competencias Técnicas Adquiridas
 
-El desarrollo de este ecosistema de juegos abarca cuatro bloques curriculares progresivos:
+El desarrollo de este ecosistema de videojuegos abarca cinco pilares técnicos progresivos:
 
 - **Bloque 1: Principios Fundamentales del Lenguaje**
   - Sintaxis estricta, semántica y comprensión del modelo de ejecución de Python.
-  - Reglas de indentación, flujo lógico secuencial, literales, variables y operaciones fundamentales de entrada y salida (`input()`, `print()`).
+  - Reglas de indentación, flujo lógico secuencial, literales, variables y captura de eventos de entrada en tiempo real (teclado y mouse mediante `pygame.event`).
   - Interpretación, depuración y corrección proactiva de mensajes de error de sintaxis y tiempo de ejecución.
 
 - **Bloque 2: Tipos de Datos y Operaciones Aritmético-Lógicas**
   - Manipulación precisa de tipos de datos primitivos (`int`, `float`, `str`, `bool`) y conversión de tipos (_type casting_).
-  - Álgebra booleana, precedencia de operadores lógicos y aritméticos.
-  - Procesamiento y saneamiento de cadenas de texto (`.strip()`, `.lower()`, `.upper()`).
+  - Álgebra booleana, trigonometría aplicada a animaciones (`math.sin`, `math.pi`) y precedencia de operadores.
+  - Procesamiento, normalización y saneamiento de cadenas de texto (`.strip()`, `.upper()`, `str.maketrans`).
 
-- **Bloque 3: Estructuras de Flujo de Control**
-  - Bifurcación condicional avanzada y exhaustiva (`if`, `elif`, `else`).
-  - Estructuras de control iterativas (`for`, `while`) para bucles infinitos controlados y recorridos secuenciales.
+- **Bloque 3: Estructuras de Flujo de Control y Game Loops**
+  - Bifurcación condicional avanzada (`if`, `elif`, `else`) y máquinas de estados finitas (`MENU`, `JUGANDO`, `PAUSA`, `GAMEOVER`).
+  - Estructuras de control iterativas (`for`, `while`) aplicadas al bucle principal de renderizado a **60 FPS** (`pygame.time.Clock`).
   - Control fino de ciclos mediante directivas de interrupción (`break`) y continuación condicional (`continue`).
 
 - **Bloque 4: Colecciones, Modularización y Robustez**
-  - Estructuras de datos complejas: listas dinámicas, tuplas, diccionarios asociativos y conjuntos (`set`).
-  - Modularización con funciones de usuario (`def`), desacoplamiento, paso de parámetros, valor de retorno y ámbito léxico (_scope_).
-  - Integración de módulos nativos de la biblioteca estándar de Python: `random`, `string`, `os`.
-  - Gestión profesional y resiliente de excepciones mediante la suite completa `try`, `except`, `else` y `finally`.
+  - Estructuras de datos complejas: listas dinámicas, colas de eventos, tuplas, diccionarios y conjuntos (`set`).
+  - Modularización con funciones (`def`), paquetes con `__init__.py`, paso de parámetros, valor de retorno y ámbito léxico (_scope_).
+  - Integración de `pygame` junto con módulos nativos de la biblioteca estándar de Python: `random`, `math`, `array`, `string`.
+  - Gestión profesional y resiliente de excepciones mediante `try`, `except`, `else` y `raise`.
+
+- **Bloque 5: Gráficos 2D, Física de Partículas y Audio con Pygame**
+  - Dibujo vectorial procedural con primitivas geométricas (`pygame.draw`) sin depender de imágenes externas.
+  - Detección de colisiones (`pygame.Rect.collidepoint`), efectos _hover_, sistemas de partículas y vibración de cámara (_screen shake_).
+  - Síntesis matemática de ondas sonoras retro de 8-bits en memoria utilizando `array` y `pygame.mixer.Sound`.
 
 ---
 
@@ -80,9 +86,9 @@ Videojuego visual en tiempo real a 60 FPS desarrollado con `pygame`, con gráfic
 - **Enfoque Algorítmico y de Videojuego 2D (`pygame`):**
   - **Gráficos Vectoriales Procedurales:** Renderizado de iconos para **Piedra**, **Papel** y **Tijera** usando primitivas geométricas (`pygame.draw.polygon`, `rect`, `circle`, `line`) sin depender de imágenes externas.
   - **Animación de Suspenso Sinusoidal:** Al elegir jugada, ambos emblemas oscilan con una onda sinusoidal (`math.sin`) antes de revelar el duelo.
-  - **Sistema de Partículas y *Screen Shake*:** Explosión física de confeti con gravedad simulada al ganar y vibración de cámara (*screen shake*) al perder.
+  - **Sistema de Partículas y _Screen Shake_:** Explosión física de confeti con gravedad simulada al ganar y vibración de cámara (_screen shake_) al perder.
   - **Audio Retro Sintetizado (`array` + `pygame.mixer`):** Generación matemática de ondas sonoras de 8-bits en memoria para rebotes, victorias, derrotas y empates sin archivos `.wav` externos.
-  - **Interacción Dual (Mouse + Teclado):** Botones con detección de colisión y efecto *hover* (`collidepoint`), además de atajos de teclado (`1`, `2`, `3`, `R`, `ESC`).
+  - **Interacción Dual (Mouse + Teclado):** Botones con detección de colisión y efecto _hover_ (`collidepoint`), además de atajos de teclado (`1`, `2`, `3`, `R`, `ESC`).
 
 ---
 
@@ -106,7 +112,7 @@ Recreación gráfica del clásico juego de palabras con teclado virtual interact
 
 - **Enfoque Algorítmico y de UX (`pygame`):**
   - **Teclado Virtual Interactivo + Teclado Físico:** Cuadrícula de 26 teclas (`A-Z`) en pantalla que cambian dinámicamente de color (verde si la letra está en la palabra, rojo oscuro si falló) con soporte simultáneo de teclado físico.
-  - **Trazado Vectorial Progresivo (`dibujar_ahorcado`):** Dibujo paso a paso de la estructura y el personaje a lo largo de las 7 vidas usando primitivas geométricas, con partículas de confeti al ganar y *screen shake* al fallar.
+  - **Trazado Vectorial Progresivo (`dibujar_ahorcado`):** Dibujo paso a paso de la estructura y el personaje a lo largo de las 7 vidas usando primitivas geométricas, con partículas de confeti al ganar y _screen shake_ al fallar.
   - **Validación Defensiva con Excepciones (`try - except ValueError`):** Empleo de `raise ValueError` para interceptar entradas inválidas o letras repetidas y capturarlas con `except ValueError as error`, evitando penalizaciones de vidas por errores de formato.
   - **Álgebra de Conjuntos (`set`) y Normalización Léxica:** Uso de conjuntos (`letras_palabra`, `letras_usadas`) para búsquedas en $O(1)$ y limpieza automática de tildes (`str.maketrans`) desde el módulo desacoplado `palabras.py`.
   - **Comprensión de Listas (_List Comprehensions_):** Renderizado dinámico de la palabra oculta revelando las letras acertadas en tiempo real.
@@ -120,7 +126,7 @@ Recreación gráfica en tiempo real del clásico arcade desarrollada con `pygame
 - **Enfoque Algorítmico y de Gráficos en Tiempo Real (`pygame`):**
   - **Tablero Matricial Ajedrezado (`28x22` celdas):** Cuadrícula visual con alternancia de tonos para facilitar la precisión espacial del jugador y marco neón dinámico según el tema elegido.
   - **Cola de Giros Anti-Input Lag:** Estructura de cola FIFO (`cola_direcciones`) que almacena hasta 2 giros anticipados a 60 FPS y previene giros suicidas de 180° inmediatos.
-  - **Física de Segmentos, Partículas y *Screen Shake*:** Explosión de partículas al comer cada manzana, vibración de cámara al chocar y sonido retro sintetizado en memoria.
+  - **Física de Segmentos, Partículas y _Screen Shake_:** Explosión de partículas al comer cada manzana, vibración de cámara al chocar y sonido retro sintetizado en memoria.
   - **Generación Segura de Comida:** Algoritmo que comprueba que la manzana pulsante nunca aparezca sobre la cabeza ni sobre ningún segmento del cuerpo de la serpiente.
   - **Máquina de Estados Finita e Interfaz Dual (Mouse + Teclado):** Control fluido entre `MENU`, `OPCIONES`, `JUGANDO`, `PAUSA` y `GAMEOVER` permitiendo elegir entre 3 niveles de velocidad (`Fácil`, `Normal`, `Difícil`) y 4 temas de color (`Verde Clásico`, `Azul Neón`, `Fuego`, `Morado Mágico`).
 
@@ -130,8 +136,8 @@ Recreación gráfica en tiempo real del clásico arcade desarrollada con `pygame
 
 Orquestador visual a 60 FPS que centraliza el acceso a todos los juegos mediante una cuadrícula de cartuchos interactivos.
 
-- **Dashboard Interactivo (`pygame`):** Fondo espacial animado con estrellas en movimiento, 4 tarjetas de juego con iconos vectoriales animados (`dibujar_icono_juego`), efectos *hover* y sonidos sintetizados de navegación.
-- **Gestión Limpia de Ventanas y Consola:** Cierra su contexto gráfico (`pygame.quit()`) antes de ceder el control al juego elegido (ya sea otra ventana `pygame`, `turtle` o la consola interactiva de *El Ahorcado*), y se reabre automáticamente al finalizar cada partida.
+- **Dashboard Interactivo (`pygame`):** Fondo espacial animado con estrellas en movimiento, 4 tarjetas de juego con iconos vectoriales animados (`dibujar_icono_juego`), efectos _hover_ y sonidos sintetizados de navegación.
+- **Gestión Limpia de Ventanas Gráficas:** Cierra su contexto gráfico (`pygame.quit()`) antes de abrir la ventana `pygame` del juego elegido y restaura automáticamente el menú principal al finalizar cada partida.
 - **Patrón Modular:** Aplica la convención estándar `from [paquete] import [módulo]` y la invocación uniforme de la interfaz pública `.jugar()`.
 - **Guardia de Ejecución (`if __name__ == '__main__':`):** Garantiza que cada juego pueda ser ejecutado tanto de manera individual e independiente como a través del menú unificado.
 
@@ -141,10 +147,16 @@ Orquestador visual a 60 FPS que centraliza el acceso a todos los juegos mediante
 
 ### Prerrequisitos
 
-- Tener instalado **Python 3.8** o superior en el sistema. Puedes comprobarlo ejecutando:
-  ```bash
-  python --version
-  ```
+1. Tener instalado **Python 3.8** o superior en el sistema:
+
+   ```bash
+   python --version
+   ```
+
+2. Instalar la librería **Pygame** (o **pygame-ce**):
+   ```bash
+   pip install pygame
+   ```
 
 ### Ejecución
 
