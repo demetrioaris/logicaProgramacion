@@ -43,7 +43,7 @@ El desarrollo de este ecosistema de videojuegos abarca cinco pilares técnicos p
 
 - **Bloque 5: Gráficos 2D, Física de Partículas y Audio con Pygame**
   - Dibujo vectorial procedural con primitivas geométricas (`pygame.draw`) sin depender de imágenes externas.
-  - Detección de colisiones (`pygame.Rect.collidepoint`), efectos _hover_, sistemas de partículas y vibración de cámara (_screen shake_).
+  - Detección de colisiones (`pygame.Rect.collidepoint`), efectos *hover*, sistemas de partículas y vibración de cámara (*screen shake*).
   - Síntesis matemática de ondas sonoras retro de 8-bits en memoria utilizando `array` y `pygame.mixer.Sound`.
 
 ---
@@ -86,9 +86,9 @@ Videojuego visual en tiempo real a 60 FPS desarrollado con `pygame`, con gráfic
 - **Enfoque Algorítmico y de Videojuego 2D (`pygame`):**
   - **Gráficos Vectoriales Procedurales:** Renderizado de iconos para **Piedra**, **Papel** y **Tijera** usando primitivas geométricas (`pygame.draw.polygon`, `rect`, `circle`, `line`) sin depender de imágenes externas.
   - **Animación de Suspenso Sinusoidal:** Al elegir jugada, ambos emblemas oscilan con una onda sinusoidal (`math.sin`) antes de revelar el duelo.
-  - **Sistema de Partículas y _Screen Shake_:** Explosión física de confeti con gravedad simulada al ganar y vibración de cámara (_screen shake_) al perder.
+  - **Sistema de Partículas y *Screen Shake*:** Explosión física de confeti con gravedad simulada al ganar y vibración de cámara (*screen shake*) al perder.
   - **Audio Retro Sintetizado (`array` + `pygame.mixer`):** Generación matemática de ondas sonoras de 8-bits en memoria para rebotes, victorias, derrotas y empates sin archivos `.wav` externos.
-  - **Interacción Dual (Mouse + Teclado):** Botones con detección de colisión y efecto _hover_ (`collidepoint`), además de atajos de teclado (`1`, `2`, `3`, `R`, `ESC`).
+  - **Interacción Dual (Mouse + Teclado):** Botones con detección de colisión y efecto *hover* (`collidepoint`), además de atajos de teclado (`1`, `2`, `3`, `R`, `ESC`).
 
 ---
 
@@ -112,7 +112,7 @@ Recreación gráfica del clásico juego de palabras con teclado virtual interact
 
 - **Enfoque Algorítmico y de UX (`pygame`):**
   - **Teclado Virtual Interactivo + Teclado Físico:** Cuadrícula de 26 teclas (`A-Z`) en pantalla que cambian dinámicamente de color (verde si la letra está en la palabra, rojo oscuro si falló) con soporte simultáneo de teclado físico.
-  - **Trazado Vectorial Progresivo (`dibujar_ahorcado`):** Dibujo paso a paso de la estructura y el personaje a lo largo de las 7 vidas usando primitivas geométricas, con partículas de confeti al ganar y _screen shake_ al fallar.
+  - **Trazado Vectorial Progresivo (`dibujar_ahorcado`):** Dibujo paso a paso de la estructura y el personaje a lo largo de las 7 vidas usando primitivas geométricas, con partículas de confeti al ganar y *screen shake* al fallar.
   - **Validación Defensiva con Excepciones (`try - except ValueError`):** Empleo de `raise ValueError` para interceptar entradas inválidas o letras repetidas y capturarlas con `except ValueError as error`, evitando penalizaciones de vidas por errores de formato.
   - **Álgebra de Conjuntos (`set`) y Normalización Léxica:** Uso de conjuntos (`letras_palabra`, `letras_usadas`) para búsquedas en $O(1)$ y limpieza automática de tildes (`str.maketrans`) desde el módulo desacoplado `palabras.py`.
   - **Comprensión de Listas (_List Comprehensions_):** Renderizado dinámico de la palabra oculta revelando las letras acertadas en tiempo real.
@@ -126,7 +126,7 @@ Recreación gráfica en tiempo real del clásico arcade desarrollada con `pygame
 - **Enfoque Algorítmico y de Gráficos en Tiempo Real (`pygame`):**
   - **Tablero Matricial Ajedrezado (`28x22` celdas):** Cuadrícula visual con alternancia de tonos para facilitar la precisión espacial del jugador y marco neón dinámico según el tema elegido.
   - **Cola de Giros Anti-Input Lag:** Estructura de cola FIFO (`cola_direcciones`) que almacena hasta 2 giros anticipados a 60 FPS y previene giros suicidas de 180° inmediatos.
-  - **Física de Segmentos, Partículas y _Screen Shake_:** Explosión de partículas al comer cada manzana, vibración de cámara al chocar y sonido retro sintetizado en memoria.
+  - **Física de Segmentos, Partículas y *Screen Shake*:** Explosión de partículas al comer cada manzana, vibración de cámara al chocar y sonido retro sintetizado en memoria.
   - **Generación Segura de Comida:** Algoritmo que comprueba que la manzana pulsante nunca aparezca sobre la cabeza ni sobre ningún segmento del cuerpo de la serpiente.
   - **Máquina de Estados Finita e Interfaz Dual (Mouse + Teclado):** Control fluido entre `MENU`, `OPCIONES`, `JUGANDO`, `PAUSA` y `GAMEOVER` permitiendo elegir entre 3 niveles de velocidad (`Fácil`, `Normal`, `Difícil`) y 4 temas de color (`Verde Clásico`, `Azul Neón`, `Fuego`, `Morado Mágico`).
 
@@ -136,7 +136,7 @@ Recreación gráfica en tiempo real del clásico arcade desarrollada con `pygame
 
 Orquestador visual a 60 FPS que centraliza el acceso a todos los juegos mediante una cuadrícula de cartuchos interactivos.
 
-- **Dashboard Interactivo (`pygame`):** Fondo espacial animado con estrellas en movimiento, 4 tarjetas de juego con iconos vectoriales animados (`dibujar_icono_juego`), efectos _hover_ y sonidos sintetizados de navegación.
+- **Dashboard Interactivo (`pygame`):** Fondo espacial animado con estrellas en movimiento, 4 tarjetas de juego con iconos vectoriales animados (`dibujar_icono_juego`), efectos *hover* y sonidos sintetizados de navegación.
 - **Gestión Limpia de Ventanas Gráficas:** Cierra su contexto gráfico (`pygame.quit()`) antes de abrir la ventana `pygame` del juego elegido y restaura automáticamente el menú principal al finalizar cada partida.
 - **Patrón Modular:** Aplica la convención estándar `from [paquete] import [módulo]` y la invocación uniforme de la interfaz pública `.jugar()`.
 - **Guardia de Ejecución (`if __name__ == '__main__':`):** Garantiza que cada juego pueda ser ejecutado tanto de manera individual e independiente como a través del menú unificado.
@@ -148,7 +148,6 @@ Orquestador visual a 60 FPS que centraliza el acceso a todos los juegos mediante
 ### Prerrequisitos
 
 1. Tener instalado **Python 3.8** o superior en el sistema:
-
    ```bash
    python --version
    ```
