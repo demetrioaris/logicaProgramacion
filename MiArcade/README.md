@@ -1,145 +1,141 @@
 # 🕹️ MiArcade - Virtual Game Hub
 
 [![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![Pygame](https://img.shields.io/badge/Pygame-2D_60_FPS-00B050?style=for-the-badge&logo=python&logoColor=white)](https://www.pygame.org/)
+[![Pygame](https://img.shields.io/badge/Pygame-2D_Arcade-00B050?style=for-the-badge&logo=python&logoColor=white)](https://www.pygame.org/)
 [![Cisco Networking Academy](https://img.shields.io/badge/Cisco_Networking_Academy-Course_Project-049fd9?style=for-the-badge&logo=cisco&logoColor=white)](https://www.netacad.com/)
 [![FUNDESTEAM](https://img.shields.io/badge/FUNDESTEAM-Panamá-FF6F00?style=for-the-badge)](https://fundesteam.org/)
+[![AI-Assisted](https://img.shields.io/badge/Development-AI--Assisted-8A2BE2?style=for-the-badge&logo=openai&logoColor=white)]()
 [![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)]()
 
-> **MiArcade** es un centro de videojuegos 2D clásicos e interactivos desarrollados en **Python** utilizando la librería gráfica **Pygame** a 60 FPS. El proyecto está diseñado con un enfoque de ingeniería de software profesional, orientado a demostrar dominio en **lógica algorítmica, programación estructurada, modularización, manejo robusto de excepciones, gráficos vectoriales procedurales, audio sintetizado y experiencia de usuario (UI/UX) interactiva con mouse y teclado**.
+> **MiArcade** es un ecosistema de minijuegos retro interactivos desarrollados en **Python** mediante la biblioteca gráfica **Pygame**. Diseñado bajo estándares de ingeniería de software, este proyecto combina **lógica algorítmica, programación estructurada, modularización desacoplada, gestión robusta de excepciones, arte vectorial procedural y audio sintetizado en tiempo real**, ofreciendo una experiencia fluida controlada tanto por mouse como por teclado.
 
 ---
 
-## 📌 Contexto Institucional
+## 📌 Contexto Institucional y Metodología
 
-Este proyecto fue desarrollado y estructurado en el marco del programa formativo **"Fundamentos de Python 1"**, impulsado en colaboración por **Cisco Networking Academy** y **FUNDESTEAM Panamá**. Representa la consolidación práctica de competencias técnicas esenciales para el desarrollo de software y la resolución sistemática de problemas algorítmicos.
+Este proyecto fue desarrollado en el marco del programa formativo **"Fundamentos de Python 1"**, promovido conjuntamente por **Cisco Networking Academy** y **FUNDESTEAM Panamá**.
+
+Asimismo, la arquitectura, modernización gráfica y optimización de algoritmos contaron con el **apoyo de herramientas de Inteligencia Artificial (IA)** como asistente de desarrollo y pair programming, permitiendo refactorizar código monolítico hacia una arquitectura modular, acelerar la implementación de matemáticas procedurales y elevar la calidad global del producto.
 
 ---
 
 ## 🎯 Competencias Técnicas Adquiridas
 
-El desarrollo de este ecosistema de videojuegos abarca cinco pilares técnicos progresivos:
+El desarrollo del proyecto consolida cinco áreas clave de la ingeniería de software:
 
-- **Bloque 1: Principios Fundamentales del Lenguaje**
-  - Sintaxis estricta, semántica y comprensión del modelo de ejecución de Python.
-  - Reglas de indentación, flujo lógico secuencial, literales, variables y captura de eventos de entrada en tiempo real (teclado y mouse mediante `pygame.event`).
-  - Interpretación, depuración y corrección proactiva de mensajes de error de sintaxis y tiempo de ejecución.
+- **Bloque 1: Fundamentos del Lenguaje y Control de Eventos**
+  - Sintaxis estricta, semántica y modelo de ejecución de Python.
+  - Flujo lógico estructurado, literales, variables y captura asíncrona de eventos de entrada (`pygame.event`) para periféricos (teclado y ratón).
+  - Depuración proactiva de errores en tiempo de ejecución.
 
 - **Bloque 2: Tipos de Datos y Operaciones Aritmético-Lógicas**
-  - Manipulación precisa de tipos de datos primitivos (`int`, `float`, `str`, `bool`) y conversión de tipos (_type casting_).
-  - Álgebra booleana, trigonometría aplicada a animaciones (`math.sin`, `math.pi`) y precedencia de operadores.
-  - Procesamiento, normalización y saneamiento de cadenas de texto (`.strip()`, `.upper()`, `str.maketrans`).
+  - Manipulación estricta de tipos de datos (`int`, `float`, `str`, `bool`) y conversiones seguras.
+  - Modelado matemático: trigonometría (`math.sin`, `math.pi`) para animaciones sinusoidales y precedencia de operadores.
+  - Normalización y saneamiento léxico de texto (`.strip()`, `.upper()`, `str.maketrans`).
 
-- **Bloque 3: Estructuras de Flujo de Control y Game Loops**
-  - Bifurcación condicional avanzada (`if`, `elif`, `else`) y máquinas de estados finitas (`MENU`, `JUGANDO`, `PAUSA`, `GAMEOVER`).
-  - Estructuras de control iterativas (`for`, `while`) aplicadas al bucle principal de renderizado a **60 FPS** (`pygame.time.Clock`).
-  - Control fino de ciclos mediante directivas de interrupción (`break`) y continuación condicional (`continue`).
+- **Bloque 3: Flujo de Control y Arquitectura de Game Loop**
+  - Bifurcaciones exhaustivas (`if`, `elif`, `else`) y máquinas de estados finitas (`MENU`, `JUGANDO`, `PAUSA`, `GAMEOVER`).
+  - Ciclos de vida interactivos (`while`, `for`) gestionados a tasa constante mediante reloj interno (`pygame.time.Clock`).
+  - Control de iteraciones con directivas `break` y `continue`.
 
-- **Bloque 4: Colecciones, Modularización y Robustez**
-  - Estructuras de datos complejas: listas dinámicas, colas de eventos, tuplas, diccionarios y conjuntos (`set`).
-  - Modularización con funciones (`def`), paquetes con `__init__.py`, paso de parámetros, valor de retorno y ámbito léxico (_scope_).
-  - Integración de `pygame` junto con módulos nativos de la biblioteca estándar de Python: `random`, `math`, `array`, `string`.
-  - Gestión profesional y resiliente de excepciones mediante `try`, `except`, `else` y `raise`.
+- **Bloque 4: Estructuras de Datos, Modularización y Robustez**
+  - Manejo de estructuras de datos: listas dinámicas, colas FIFO para entradas, tuplas inmutables, diccionarios y conjuntos (`set`) con búsquedas en $\mathcal{O}(1)$.
+  - Arquitectura desacoplada en funciones y paquetes de Python, garantizando alta cohesión y bajo acoplamiento.
+  - Manejo preventivo de excepciones (`try`, `except`, `else`, `raise`) para garantizar tolerancia a fallos.
 
-- **Bloque 5: Gráficos 2D, Física de Partículas y Audio con Pygame**
-  - Dibujo vectorial procedural con primitivas geométricas (`pygame.draw`) sin depender de imágenes externas.
-  - Detección de colisiones (`pygame.Rect.collidepoint`), efectos *hover*, sistemas de partículas y vibración de cámara (*screen shake*).
-  - Síntesis matemática de ondas sonoras retro de 8-bits en memoria utilizando `array` y `pygame.mixer.Sound`.
+- **Bloque 5: Gráficos 2D Procedurales y Síntesis de Sonido**
+  - Renderizado vectorial con primitivas geométricas (`pygame.draw`), prescindiendo de dependencias de activos externos pesados.
+  - Detección de colisiones (`Rect.collidepoint`), efectos dinámicos de cursor (*hover*), sistemas de partículas y vibración de pantalla (*screen shake*).
+  - Generación algorítmica de ondas de audio retro de 8 bits en memoria con `array` y reproducción con `pygame.mixer.Sound`.
 
 ---
 
 ## 📁 Arquitectura del Proyecto
 
-El proyecto sigue una arquitectura modular en paquetes independientes orquestados por un punto de entrada central:
+El repositorio implementa una estructura modular organizada en módulos temáticos e independientes:
 
 ```text
 MiArcade/
 │
-├── menu_principal.py               # Orquestador principal y hub del Arcade (Pygame 60 FPS)
+├── menu_principal.py               # Orquestador del Arcade y lanzador interactivo
 │
 ├── piedra_papel_y_tijera/          # Módulo: Juego 1
-│   ├── __init__.py
-│   └── piedra_papel_y_tijera.py    # Duelo clásico en Pygame con partículas y sonido
+│   └── piedra_papel_y_tijera.py    # Duelo clásico con física de partículas y marcadores
 │
 ├── cazafantasma/                   # Módulo: Juego 2 (Simulación de Caso de Negocio)
-│   ├── __init__.py
-│   └── cazafantasmas.py            # Entrenador matemático interactivo en Pygame
+│   └── cazafantasmas.py            # Entrenador aritmético gamificado para niños
 │
 ├── ahorcado/                       # Módulo: Juego 3
-│   ├── __init__.py
-│   ├── ahorcado.py                 # Juego del ahorcado en Pygame con teclado virtual
+│   ├── ahorcado.py                 # Juego de palabras con teclado virtual e interfaz gráfica
 │   └── palabras.py                 # Banco léxico desacoplado
 │
-└── serpiente/                      # Módulo: Juego 4 (Gráficos y Bucles de Eventos en Tiempo Real)
-    ├── __init__.py
-    └── juego_serpiente.py          # Motor Snake en Pygame a 60 FPS con cola de giros
+└── serpiente/                      # Módulo: Juego 4
+    └── juego_serpiente.py          # Motor Snake clásico con cola anti-lag y personalización
 ```
 
 ---
 
 ## 🎮 Catálogo de Juegos y Demostración Técnica
 
-### 1. Piedra, Papel o Tijera (Arcade 60 FPS con Pygame)
+### 1. Piedra, Papel o Tijera
 
-Videojuego visual en tiempo real a 60 FPS desarrollado con `pygame`, con gráficos vectoriales propios, animaciones físicas y síntesis de sonido.
+Reinvención visual interactiva del duelo tradicional contra la computadora.
 
-- **Enfoque Algorítmico y de Videojuego 2D (`pygame`):**
-  - **Gráficos Vectoriales Procedurales:** Renderizado de iconos para **Piedra**, **Papel** y **Tijera** usando primitivas geométricas (`pygame.draw.polygon`, `rect`, `circle`, `line`) sin depender de imágenes externas.
-  - **Animación de Suspenso Sinusoidal:** Al elegir jugada, ambos emblemas oscilan con una onda sinusoidal (`math.sin`) antes de revelar el duelo.
-  - **Sistema de Partículas y *Screen Shake*:** Explosión física de confeti con gravedad simulada al ganar y vibración de cámara (*screen shake*) al perder.
-  - **Audio Retro Sintetizado (`array` + `pygame.mixer`):** Generación matemática de ondas sonoras de 8-bits en memoria para rebotes, victorias, derrotas y empates sin archivos `.wav` externos.
-  - **Interacción Dual (Mouse + Teclado):** Botones con detección de colisión y efecto *hover* (`collidepoint`), además de atajos de teclado (`1`, `2`, `3`, `R`, `ESC`).
-
----
-
-### 2. Cazafantasmas Matemático (Arcade 60 FPS con Pygame)
-
-> 💼 **Caso de Negocio / Simulación Profesional:**  
-> Este proyecto fue concebido y desarrollado bajo la simulación de un encargo corporativo: una entidad educativa contrata a un equipo de desarrollo de software para construir un videojuego interactivo, ágil y gamificado de entrenamiento matemático para estudiantes de primaria que inician en aritmética.
-
-- **Requerimientos Pedagógicos y de Gamificación Resueltos (`pygame`):**
-  - **Interacción Híbrida para Niños (Tarjetas Clicables + Teclado):** El niño puede resolver la operación haciendo clic directamente sobre una de las **4 tarjetas de respuesta en pantalla** o escribiendo el número en la caja de disparo y presionando `ENTER`.
-  - **Fantasmas Animados Proceduralmente:** Fantasmas de distintos colores dibujados por código con movimiento de levitación sinusoidal (`math.sin`), falda ondulada y expresiones que reaccionan al impacto del rayo.
-  - **Aritmética Adaptada a Primaria:** Generador dinámico de operaciones básicas (suma, resta, multiplicación y división). El algoritmo asegura que las restas nunca arrojen resultados negativos (`n2 <= n1`) y que las divisiones sean siempre exactas sin decimales (`n1 = n2 * solucion`).
-  - **Rayo de Protones, Partículas y Audio 8-bits:** Disparo láser luminoso con explosión de partículas de ectoplasma al acertar, corazones vectoriales para las 3 vidas y efectos de sonido sintetizados en tiempo real.
-  - **Tolerancia a Fallos con Escudo Protector (`try - except ValueError - else`):** Si el niño escribe letras o símbolos en la caja de texto, el sistema atrapa el `ValueError` y activa el escudo ectoplásmico sin quitarle vidas ni perder la ronda.
+- **Detalles de Implementación:**
+  - **Gráficos Vectoriales Procedurales:** Dibujo en código de piedra, papel y tijera usando polígonos, círculos y líneas.
+  - **Animación Sinusoidal:** Oscilación rítmica previa al enfrentamiento para aumentar el dinamismo visual.
+  - **Efectos Visuales y Sonoros:** Explosión de confeti basada en física de partículas al ganar y sacudida de pantalla al perder.
+  - **Audio 8-bits:** Ondas de audio sintetizadas matemáticamente en memoria sin requerir archivos de sonido externos.
+  - **Control Híbrido:** Interacción fluida mediante clics o teclas rápidas (`1`, `2`, `3`, `R`, `ESC`).
 
 ---
 
-### 3. Ahorcado (Hangman - Arcade 60 FPS con Pygame)
+### 2. Cazafantasmas Matemático
 
-Recreación gráfica del clásico juego de palabras con teclado virtual interactivo en pantalla, trazado vectorial progresivo y optimización en estructuras de datos.
+> 💼 **Simulación de Caso Corporativo:**  
+> Proyecto desarrollado bajo la premisa de un requerimiento institucional educativo: crear un videojuego ágil y motivador para reforzar la agilidad mental y aritmética en infantes de primaria.
 
-- **Enfoque Algorítmico y de UX (`pygame`):**
-  - **Teclado Virtual Interactivo + Teclado Físico:** Cuadrícula de 26 teclas (`A-Z`) en pantalla que cambian dinámicamente de color (verde si la letra está en la palabra, rojo oscuro si falló) con soporte simultáneo de teclado físico.
-  - **Trazado Vectorial Progresivo (`dibujar_ahorcado`):** Dibujo paso a paso de la estructura y el personaje a lo largo de las 7 vidas usando primitivas geométricas, con partículas de confeti al ganar y *screen shake* al fallar.
-  - **Validación Defensiva con Excepciones (`try - except ValueError`):** Empleo de `raise ValueError` para interceptar entradas inválidas o letras repetidas y capturarlas con `except ValueError as error`, evitando penalizaciones de vidas por errores de formato.
-  - **Álgebra de Conjuntos (`set`) y Normalización Léxica:** Uso de conjuntos (`letras_palabra`, `letras_usadas`) para búsquedas en $O(1)$ y limpieza automática de tildes (`str.maketrans`) desde el módulo desacoplado `palabras.py`.
-  - **Comprensión de Listas (_List Comprehensions_):** Renderizado dinámico de la palabra oculta revelando las letras acertadas en tiempo real.
-
----
-
-### 4. La Serpiente (Snake Game - Arcade 60 FPS con Pygame)
-
-Recreación gráfica en tiempo real del clásico arcade desarrollada con `pygame` a 60 FPS, con tablero ajedrezado, efectos de partículas, sonido 8-bits y personalización completa.
-
-- **Enfoque Algorítmico y de Gráficos en Tiempo Real (`pygame`):**
-  - **Tablero Matricial Ajedrezado (`28x22` celdas):** Cuadrícula visual con alternancia de tonos para facilitar la precisión espacial del jugador y marco neón dinámico según el tema elegido.
-  - **Cola de Giros Anti-Input Lag:** Estructura de cola FIFO (`cola_direcciones`) que almacena hasta 2 giros anticipados a 60 FPS y previene giros suicidas de 180° inmediatos.
-  - **Física de Segmentos, Partículas y *Screen Shake*:** Explosión de partículas al comer cada manzana, vibración de cámara al chocar y sonido retro sintetizado en memoria.
-  - **Generación Segura de Comida:** Algoritmo que comprueba que la manzana pulsante nunca aparezca sobre la cabeza ni sobre ningún segmento del cuerpo de la serpiente.
-  - **Máquina de Estados Finita e Interfaz Dual (Mouse + Teclado):** Control fluido entre `MENU`, `OPCIONES`, `JUGANDO`, `PAUSA` y `GAMEOVER` permitiendo elegir entre 3 niveles de velocidad (`Fácil`, `Normal`, `Difícil`) y 4 temas de color (`Verde Clásico`, `Azul Neón`, `Fuego`, `Morado Mágico`).
+- **Detalles de Implementación:**
+  - **Mecánica Accesible para Niños:** Permite responder seleccionando una de las 4 tarjetas en pantalla o tecleando la solución y pulsando `ENTER`.
+  - **Fantasmas Levitantes:** Animaciones calculadas proceduralmente con expresiones reactivas ante impactos.
+  - **Aritmética Adaptada:** Generación controlada de operaciones: sumas, restas sin valores negativos y divisiones exactas.
+  - **Efectos Especiales:** Láser de protones, dispersión de ectoplasma y seguimiento de salud mediante corazones vectoriales.
+  - **Protección Antierror:** Validación defensiva con captura de excepciones (`ValueError`) que activa un escudo protector sin penalizar vidas infantiles por pulsar caracteres accidentales.
 
 ---
 
-### 5. Menú Principal (Lobby Arcade en Pygame)
+### 3. El Ahorcado
 
-Orquestador visual a 60 FPS que centraliza el acceso a todos los juegos mediante una cuadrícula de cartuchos interactivos.
+Versión moderna del clásico juego de adivinanza léxica enriquecido con componentes visuales adaptativos.
 
-- **Dashboard Interactivo (`pygame`):** Fondo espacial animado con estrellas en movimiento, 4 tarjetas de juego con iconos vectoriales animados (`dibujar_icono_juego`), efectos *hover* y sonidos sintetizados de navegación.
-- **Gestión Limpia de Ventanas Gráficas:** Cierra su contexto gráfico (`pygame.quit()`) antes de abrir la ventana `pygame` del juego elegido y restaura automáticamente el menú principal al finalizar cada partida.
-- **Patrón Modular:** Aplica la convención estándar `from [paquete] import [módulo]` y la invocación uniforme de la interfaz pública `.jugar()`.
-- **Guardia de Ejecución (`if __name__ == '__main__':`):** Garantiza que cada juego pueda ser ejecutado tanto de manera individual e independiente como a través del menú unificado.
+- **Detalles de Implementación:**
+  - **Teclado Virtual Dual:** Panel táctil en pantalla de 26 letras con retroalimentación cromática (verde para aciertos, rojo oscuro para intentos fallidos), operable simultáneamente con el teclado del ordenador.
+  - **Construcción Vectorial Progresiva:** Ilustración por etapas de la horca y el personaje correspondiente al conteo de vidas restantes.
+  - **Optimización con Conjuntos (`set`):** Búsqueda instantánea de letras acertadas y usadas en tiempo constante $\mathcal{O}(1)$.
+  - **Normalización Automática:** Tratamiento de tildes y caracteres especiales con tablas de traducción para garantizar compatibilidad léxica.
+
+---
+
+### 4. La Serpiente (Snake)
+
+Recreación fiel y refinada del clásico de arcade con controles responsivos y configuración visual.
+
+- **Detalles de Implementación:**
+  - **Tablero Ajedrezado (28×22):** Cuadrícula con alternancia sutil de contraste para guiar la percepción espacial.
+  - **Cola FIFO Anti-Lag:** Búfer de entradas que registra giros inmediatos, evitando colisiones accidentales de 180° y retrasos de respuesta.
+  - **Generación Segura de Manzanas:** Algoritmo que previene el desove de comida sobre el cuerpo o la cabeza de la serpiente.
+  - **Personalización y Dificultad:** Soporte para 3 niveles de velocidad y 4 temas cromáticos (Verde Clásico, Azul Neón, Fuego y Morado Mágico).
+
+---
+
+### 5. Menú Principal (Hub Central)
+
+Lobby interactivo que centraliza y orquesta la ejecución de los diferentes minijuegos.
+
+- **Detalles de Implementación:**
+  - **Interfaz Atractiva:** Fondo estelar en movimiento continuo, cartuchos virtuales con iluminación dinámica y previsualizaciones animadas.
+  - **Gestión Limpia de Contextos:** Cierre y reapertura controlada de instancias gráficas para alternar de juego sin conflictos de recursos.
+  - **Modularidad:** Punto de entrada limpio que invoca el método estandarizado `.jugar()` de cada paquete.
 
 ---
 
@@ -147,32 +143,30 @@ Orquestador visual a 60 FPS que centraliza el acceso a todos los juegos mediante
 
 ### Prerrequisitos
 
-1. Tener instalado **Python 3.8** o superior en el sistema:
+1. **Python 3.8+** instalado en el sistema:
    ```bash
    python --version
    ```
 
-2. Instalar la librería **Pygame** (o **pygame-ce**):
+2. Instalar la dependencia gráfica **Pygame**:
    ```bash
    pip install pygame
    ```
 
-### Ejecución
+### Puesta en Marcha
 
-1. Clona este repositorio o descarga la carpeta del proyecto:
-
+1. Clonar el repositorio y acceder al directorio del proyecto:
    ```bash
    git clone https://github.com/tu-usuario/MiArcade.git
    cd MiArcade
    ```
 
-2. Ejecuta el centro de juegos desde la terminal:
-
+2. Lanzar la consola Arcade:
    ```bash
    python menu_principal.py
    ```
 
-3. _(Opcional)_ Si deseas probar cualquiera de los juegos de manera independiente:
+3. *(Opcional)* Ejecutar módulos individuales de forma directa:
    ```bash
    python -m piedra_papel_y_tijera.piedra_papel_y_tijera
    python -m cazafantasma.cazafantasmas
@@ -184,6 +178,7 @@ Orquestador visual a 60 FPS que centraliza el acceso a todos los juegos mediante
 
 ## 👨‍💻 Créditos y Reconocimientos
 
-- **Desarrollador / Autor:** Estudiante de Lógica de Programación y Desarrollo de Software.
+- **Desarrollador / Autor:** Estudiante del área de Informática Aplicada a la Educación / Lógica de Programación.
+- **Asistencia Técnica:** Inteligencia Artificial (AI-Assisted Development) aplicada al diseño algorítmico, modularización y optimización matemática.
 - **Curso:** _Fundamentos de Python 1_.
-- **Instituciones Aliadas:** **Cisco Networking Academy** & **FUNDESTEAM Panamá**.
+- **Instituciones Promotoras:** **Cisco Networking Academy** & **FUNDESTEAM Panamá**.
