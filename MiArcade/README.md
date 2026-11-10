@@ -63,64 +63,82 @@ MiArcade/
 │   ├── __init__.py
 │   └── cazafantasmas.py            # Motor matemático adaptativo con suite try/except/else/finally
 │
-└── ahorcado/                       # Módulo: Juego 3
+├── ahorcado/                       # Módulo: Juego 3
+│   ├── __init__.py
+│   ├── ahorcado.py                 # Lógica de juego, sets de letras y renderizado dinámico
+│   ├── hangman_visual.py           # Diccionario de arte visual ASCII por niveles de vidas
+│   └── palabras.py                 # Banco léxico desacoplado
+│
+└── serpiente/                      # Módulo: Juego 4 (Gráficos y Bucles de Eventos en Tiempo Real)
     ├── __init__.py
-    ├── ahorcado.py                 # Lógica de juego, sets de letras y renderizado dinámico
-    ├── hangman_visual.py           # Diccionario de arte visual ASCII por niveles de vidas
-    └── palabras.py                 # Banco léxico desacoplado
+    └── juego_serpiente.py          # Motor Snake en Turtle con cola de giros y personalización
 ```
 
 ---
 
 ## 🎮 Catálogo de Juegos y Demostración Técnica
 
-### 1. Piedra, Papel o Tijera
+### 1. Piedra, Papel o Tijera (Arcade 60 FPS con Pygame)
 
-Un simulador de torneos por rondas contra la computadora con análisis estadístico en tiempo real.
+Videojuego visual en tiempo real a 60 FPS desarrollado con `pygame`, con gráficos vectoriales propios, animaciones físicas y síntesis de sonido.
 
-- **Enfoque Algorítmico y de UX:**
-  - **Experiencia de usuario ágil y mapeo asociativo:** Menú de opciones intuitivo que acepta tanto números (`1`, `2`, `3`) como palabras (`piedra`, `papel`, `tijera`) mediante diccionarios de mapeo (`dict`).
-  - **Marcador en vivo y terminal limpia (Clean UX):** Refresco dinámico con `os.system` que mantiene el encabezado, la ronda actual y el marcador en vivo (`👤 Tú vs 🤖 CPU`) fijos en pantalla sin desplazamiento molesto.
-  - **Validación defensiva con excepciones (`try - except ValueError`):** Control estricto de entradas que intercepta valores no permitidos mediante `raise ValueError`, garantizando tolerancia a fallos.
-  - **Aleatoriedad estocástica y lógica de juego:** Selección de la máquina con `random.choice()` y resolución booleana precisa de victorias, derrotas y empates.
-  - **Historial de torneo y rejugabilidad:** Registro completo de rondas en tuplas, proclamación de campeón al cierre y ciclo interactivo para reiniciar torneos o volver al menú principal.
+- **Enfoque Algorítmico y de Videojuego 2D (`pygame`):**
+  - **Gráficos Vectoriales Procedurales:** Renderizado de iconos para **Piedra**, **Papel** y **Tijera** usando primitivas geométricas (`pygame.draw.polygon`, `rect`, `circle`, `line`) sin depender de imágenes externas.
+  - **Animación de Suspenso Sinusoidal:** Al elegir jugada, ambos emblemas oscilan con una onda sinusoidal (`math.sin`) antes de revelar el duelo.
+  - **Sistema de Partículas y *Screen Shake*:** Explosión física de confeti con gravedad simulada al ganar y vibración de cámara (*screen shake*) al perder.
+  - **Audio Retro Sintetizado (`array` + `pygame.mixer`):** Generación matemática de ondas sonoras de 8-bits en memoria para rebotes, victorias, derrotas y empates sin archivos `.wav` externos.
+  - **Interacción Dual (Mouse + Teclado):** Botones con detección de colisión y efecto *hover* (`collidepoint`), además de atajos de teclado (`1`, `2`, `3`, `R`, `ESC`).
 
 ---
 
-### 2. Cazafantasmas Matemático
+### 2. Cazafantasmas Matemático (Arcade 60 FPS con Pygame)
 
 > 💼 **Caso de Negocio / Simulación Profesional:**  
 > Este proyecto fue concebido y desarrollado bajo la simulación de un encargo corporativo: una entidad educativa contrata a un equipo de desarrollo de software para construir un videojuego interactivo, ágil y gamificado de entrenamiento matemático para estudiantes de primaria que inician en aritmética.
 
-- **Requerimientos Pedagógicos y de Gamificación Resueltos:**
-  - **Interacción directa sin fricción (Zero Typing Overhead):** Diseñado específicamente para niños que aún no dominan la mecanografía. El juego va directo a la acción: el niño solo utiliza el teclado numérico para disparar la solución matemática, eliminando ingresos innecesarios de palabras.
-  - **Aritmética adaptada a primaria:** Generador dinámico de operaciones básicas (suma, resta, multiplicación y división). El algoritmo asegura que las restas nunca arrojen resultados negativos (`n2 <= n1`) y que las divisiones sean siempre exactas sin decimales (`n1 = n2 * solucion`), fomentando el aprendizaje sin frustración.
-  - **Gamificación visual:** Sistema de vidas con corazones (`❤️ ❤️ ❤️`), puntaje acumulativo por fantasmas cazados (`+10 puntos`) y avance progresivo de misiones por rondas.
-  - **Tolerancia a fallos con escudo protector (`try - except ValueError - else`):** Si el niño presiona accidentalmente letras o símbolos, el sistema atrapa el `ValueError` y despliega un mensaje protector sin quitarle vidas ni perder el turno.
-  - **Experiencia de usuario limpia (Clean UX):** Limpieza dinámica de terminal (`os.system`) para mantener el tablero fijo sin desplazamiento de pantalla y ciclo de revancha interactivo.
+- **Requerimientos Pedagógicos y de Gamificación Resueltos (`pygame`):**
+  - **Interacción Híbrida para Niños (Tarjetas Clicables + Teclado):** El niño puede resolver la operación haciendo clic directamente sobre una de las **4 tarjetas de respuesta en pantalla** o escribiendo el número en la caja de disparo y presionando `ENTER`.
+  - **Fantasmas Animados Proceduralmente:** Fantasmas de distintos colores dibujados por código con movimiento de levitación sinusoidal (`math.sin`), falda ondulada y expresiones que reaccionan al impacto del rayo.
+  - **Aritmética Adaptada a Primaria:** Generador dinámico de operaciones básicas (suma, resta, multiplicación y división). El algoritmo asegura que las restas nunca arrojen resultados negativos (`n2 <= n1`) y que las divisiones sean siempre exactas sin decimales (`n1 = n2 * solucion`).
+  - **Rayo de Protones, Partículas y Audio 8-bits:** Disparo láser luminoso con explosión de partículas de ectoplasma al acertar, corazones vectoriales para las 3 vidas y efectos de sonido sintetizados en tiempo real.
+  - **Tolerancia a Fallos con Escudo Protector (`try - except ValueError - else`):** Si el niño escribe letras o símbolos en la caja de texto, el sistema atrapa el `ValueError` y activa el escudo ectoplásmico sin quitarle vidas ni perder la ronda.
 
 ---
 
-### 3. Ahorcado (Hangman)
+### 3. Ahorcado (Hangman - Arcade 60 FPS con Pygame)
 
-Recreación del clásico juego de palabras con interfaz dinámica de consola y optimización en estructuras de datos.
+Recreación gráfica del clásico juego de palabras con teclado virtual interactivo en pantalla, trazado vectorial progresivo y optimización en estructuras de datos.
 
-- **Enfoque Algorítmico y de UX:**
-  - **Validación Defensiva con Excepciones (`try - except ValueError`):** Empleo de `raise ValueError` para interceptar de inmediato entradas inválidas (más de una letra, números, caracteres especiales o letras ya usadas) y capturarlas con `except ValueError as error`, evitando penalizaciones de vidas por errores de formato.
-  - **Álgebra de Conjuntos (`set`):** Manejo eficiente de colecciones no repetidas. Se utiliza la diferencia de conjuntos (`abecedario - letras_usadas`) para comprobar letras válidas restantes en tiempo $O(1)$.
-  - **Comprensión de Listas (_List Comprehensions_):** Renderizado dinámico de la palabra oculta reemplazando letras no descubiertas por guiones de forma declarativa y legible.
-  - **Arquitectura de Datos Desacoplada:** El catálogo de palabras y las representaciones visuales en arte ASCII del muñeco se distribuyen en módulos separados (`palabras.py` y `hangman_visual.py`), respetando el principio de responsabilidad única.
-  - **Experiencia de Usuario en Terminal (Clean UX):** Integración con el sistema operativo (`os.system`) para limpiar la pantalla en cada jugada (`cls` en Windows / `clear` en Unix), evitando el desplazamiento excesivo (_scroll_) y conservando el dibujo y estado visual en una posición fija.
-  - **Control de Rejugabilidad:** Ciclo de confirmación final que permite reiniciar el juego con una palabra nueva o retornar limpiamente al menú central.
+- **Enfoque Algorítmico y de UX (`pygame`):**
+  - **Teclado Virtual Interactivo + Teclado Físico:** Cuadrícula de 26 teclas (`A-Z`) en pantalla que cambian dinámicamente de color (verde si la letra está en la palabra, rojo oscuro si falló) con soporte simultáneo de teclado físico.
+  - **Trazado Vectorial Progresivo (`dibujar_ahorcado`):** Dibujo paso a paso de la estructura y el personaje a lo largo de las 7 vidas usando primitivas geométricas, con partículas de confeti al ganar y *screen shake* al fallar.
+  - **Validación Defensiva con Excepciones (`try - except ValueError`):** Empleo de `raise ValueError` para interceptar entradas inválidas o letras repetidas y capturarlas con `except ValueError as error`, evitando penalizaciones de vidas por errores de formato.
+  - **Álgebra de Conjuntos (`set`) y Normalización Léxica:** Uso de conjuntos (`letras_palabra`, `letras_usadas`) para búsquedas en $O(1)$ y limpieza automática de tildes (`str.maketrans`) desde el módulo desacoplado `palabras.py`.
+  - **Comprensión de Listas (_List Comprehensions_):** Renderizado dinámico de la palabra oculta revelando las letras acertadas en tiempo real.
 
 ---
 
-### 4. Menú Principal (Hub Central)
+### 4. La Serpiente (Snake Game - Arcade 60 FPS con Pygame)
 
-Orquestador que centraliza el acceso a todos los juegos.
+Recreación gráfica en tiempo real del clásico arcade desarrollada con `pygame` a 60 FPS, con tablero ajedrezado, efectos de partículas, sonido 8-bits y personalización completa.
 
+- **Enfoque Algorítmico y de Gráficos en Tiempo Real (`pygame`):**
+  - **Tablero Matricial Ajedrezado (`28x22` celdas):** Cuadrícula visual con alternancia de tonos para facilitar la precisión espacial del jugador y marco neón dinámico según el tema elegido.
+  - **Cola de Giros Anti-Input Lag:** Estructura de cola FIFO (`cola_direcciones`) que almacena hasta 2 giros anticipados a 60 FPS y previene giros suicidas de 180° inmediatos.
+  - **Física de Segmentos, Partículas y *Screen Shake*:** Explosión de partículas al comer cada manzana, vibración de cámara al chocar y sonido retro sintetizado en memoria.
+  - **Generación Segura de Comida:** Algoritmo que comprueba que la manzana pulsante nunca aparezca sobre la cabeza ni sobre ningún segmento del cuerpo de la serpiente.
+  - **Máquina de Estados Finita e Interfaz Dual (Mouse + Teclado):** Control fluido entre `MENU`, `OPCIONES`, `JUGANDO`, `PAUSA` y `GAMEOVER` permitiendo elegir entre 3 niveles de velocidad (`Fácil`, `Normal`, `Difícil`) y 4 temas de color (`Verde Clásico`, `Azul Neón`, `Fuego`, `Morado Mágico`).
+
+---
+
+### 5. Menú Principal (Lobby Arcade en Pygame)
+
+Orquestador visual a 60 FPS que centraliza el acceso a todos los juegos mediante una cuadrícula de cartuchos interactivos.
+
+- **Dashboard Interactivo (`pygame`):** Fondo espacial animado con estrellas en movimiento, 4 tarjetas de juego con iconos vectoriales animados (`dibujar_icono_juego`), efectos *hover* y sonidos sintetizados de navegación.
+- **Gestión Limpia de Ventanas y Consola:** Cierra su contexto gráfico (`pygame.quit()`) antes de ceder el control al juego elegido (ya sea otra ventana `pygame`, `turtle` o la consola interactiva de *El Ahorcado*), y se reabre automáticamente al finalizar cada partida.
 - **Patrón Modular:** Aplica la convención estándar `from [paquete] import [módulo]` y la invocación uniforme de la interfaz pública `.jugar()`.
-- **Guardia de Ejecución (`if __name__ == '__main__':`):** Garantiza que cada juego pueda ser ejecutado tanto de manera individual e independiente como a través del menú unificado sin ejecuciones colaterales involuntarias.
+- **Guardia de Ejecución (`if __name__ == '__main__':`):** Garantiza que cada juego pueda ser ejecutado tanto de manera individual e independiente como a través del menú unificado.
 
 ---
 
@@ -153,6 +171,7 @@ Orquestador que centraliza el acceso a todos los juegos.
    python -m piedra_papel_y_tijera.piedra_papel_y_tijera
    python -m cazafantasma.cazafantasmas
    python -m ahorcado.ahorcado
+   python -m serpiente.juego_serpiente
    ```
 
 ---
